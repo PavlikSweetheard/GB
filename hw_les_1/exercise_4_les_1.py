@@ -5,14 +5,11 @@ numeric = int(input('Введите целое положительное чис
 
 max_num = numeric % 10
 
-while numeric // 10 > 0:
-    el = numeric % 10
-    print(el)
+while numeric > 0:
     if max_num == 9:
         break
-    if el > max_num:
-        max_num = el
+    if numeric % 10 > max_num:
+        max_num = numeric % 10
     numeric = numeric // 10
-    print(numeric)
 
-print(max_num, 'swef')
+print('Наибольшая цифра у введенного числа =', max_num)
