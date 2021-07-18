@@ -21,7 +21,7 @@ class Car:
         self.is_police = car_is_police
 
     def go(self):
-        print(f"Car {self.name} is  ...")
+        print(f"Car {self.name} is starting ...")
 
     def stop(self):
         print(f"Car {self.name} stopped!")
@@ -52,16 +52,33 @@ class WorkCar(Car):
 
 
 class PoliceCar(Car):
-    pass
+    def __init__(self, car_speed, car_color, car_name, car_is_police=True):
+        super().__init__(car_speed, car_color, car_name, car_is_police)
 
 
 town_car_1 = TownCar(85, "red", "Reno Logan", False)
-sport_car_1 = SportCar(185, "pink", "Lamborgini", False)
-work_car_1 = WorkCar(35, "blue", "Kamaz 800", False)
-police_car_1 = PoliceCar(885, "blue-white", "BMW X7", True)
-
-sport_car_1.show_speed()
+town_car_1.go()
 town_car_1.show_speed()
+town_car_1.turn('left')
+town_car_1.stop()
+
+sport_car_1 = SportCar(185, "pink", "Lamborgini", False)
+print("\n")
+sport_car_1.go()
+sport_car_1.show_speed()
+sport_car_1.turn('right')
+sport_car_1.stop()
+
+work_car_1 = WorkCar(35, "blue", "Kamaz 800", False)
+print("\n")
+work_car_1.go()
 work_car_1.show_speed()
+work_car_1.turn('back')
+work_car_1.stop()
+
+police_car_1 = PoliceCar(885, "blue-white", "BMW X7")
+print("\n")
+police_car_1.go()
 police_car_1.show_speed()
-sport_car_1.turn('left')
+police_car_1.turn('curb')
+police_car_1.stop()

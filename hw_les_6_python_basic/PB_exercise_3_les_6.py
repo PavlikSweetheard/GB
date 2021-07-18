@@ -26,12 +26,13 @@ class Worker:
 class Position(Worker):
 
     def get_full_name(self):
-        print(f"Полное имя сотрудника: {self.name} {self.surname} {self.position}")
+        print(f"Full name: {self.name} {self.surname} {self.position}")
 
     def get_total_income(self):
-        print(f"Доход с учетом премии сотрудника: {sum(self._income.values())}")
+        print(f"Income with bonus: {sum(self._income.values())}")
 
 
-new = Position('Ivan', 'Ivanov', 'senior', 150000, 500000)
-new.get_total_income()
-new.get_full_name()
+II_senior = Position('Ivan', 'Ivanov', 'senior', 150000, 500000)
+II_senior.get_total_income()
+II_senior.get_full_name()
+print(II_senior.position)

@@ -11,19 +11,19 @@
 
 
 """
-import time as t
+from time import sleep
 from itertools import cycle
 
 
 class TraficLight:
-    colors = {"Red": 7, "Yellow": 2, "Green": 2}
+    __colors = (("Red", (7, 31)), ("Yellow", (2, 33)), ("Green", (2, 32)), ("Yellow", (2, 33)))
 
     def running(self):
         n = 0
         print("Запуск ...")
-        for status in cycle(self.colors.items()):
-            print(status[0])
-            t.sleep(status[1])
+        for status in cycle(self.__colors):
+            print(f"\r\033[{status[1][1]}m\033[40m {status[0]} \033[0m", end="")
+            sleep(status[1][0])
             n += 1
             if n > 10:
                 break

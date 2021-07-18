@@ -17,9 +17,11 @@ class Road:
         self._length = l
         self._width = w
 
-    def weight(self, specific_weight=25, thickness=0.05):
+    def full_weight(self, specific_weight=25, thickness=5):
         return print(f"Масса асфальта = {self._width * self._length * specific_weight * thickness / 1000} тонн")
 
 
 city_road = Road(5000, 20)
-city_road.weight()
+city_road.full_weight()
+
+city_road.full_weight(specific_weight=40, thickness= 10)

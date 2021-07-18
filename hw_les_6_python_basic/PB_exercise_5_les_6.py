@@ -11,26 +11,26 @@
 
 
 class Stationery:
-    def __init__(self, stationery_title):
+    def __init__(self, stationery_title="something"):
         self.title = stationery_title
 
     def draw(self):
-        print("start drawing...")
+        print(f"start drawing with {self.title}")
 
 
 class Pen(Stationery):
     def draw(self):
-        print("start drawing on pen...")
+        print(f"start drawing with {self.title} ...")
 
 
 class Pencil(Stationery):
     def draw(self):
-        print("start drawing on pencil...")
+        print(f"start drawing with {self.title} ...")
 
 
 class Handle(Stationery):
     def draw(self):
-        print("start drawing on handle...")
+        print(f"start drawing with {self.title} ...")
 
 
 
